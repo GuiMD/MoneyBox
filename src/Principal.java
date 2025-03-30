@@ -35,9 +35,9 @@ public class Principal {
                     System.out.print("Digite o valor a remover: ");
                     double valorRemocao = scanner.nextDouble();
 
-                    if (tipoRemocao == 1) cofrinho.remover(valorRemocao, Real.class);
-                    else if (tipoRemocao == 2) cofrinho.remover(valorRemocao, Dolar.class);
-                    else if (tipoRemocao == 3) cofrinho.remover(valorRemocao, Euro.class);
+                    if (tipoRemocao == 1) cofrinho.remover(valorRemocao, "Real");
+                    else if (tipoRemocao == 2) cofrinho.remover(valorRemocao, "Dólar");
+                    else if (tipoRemocao == 3) cofrinho.remover(valorRemocao, "Euro");
                     else System.out.println("Opção inválida!");
                     break;
 

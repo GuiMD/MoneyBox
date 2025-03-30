@@ -12,4 +12,9 @@ class Real extends Moeda {
     public double converter() {
         return valor; // Real já está em reais
     }
+
+    @Override
+    public String getTipo() {
+        return "Real";
+    }
 }

@@ -3,16 +3,23 @@ import java.util.ArrayList;
 class Cofrinho {
     private ArrayList<Moeda> listaMoedas = new ArrayList<>();
 
-    public void adicionar(Moeda moeda) {
-        listaMoedas.add(moeda);
+    public void adicionar(Moeda novaMoeda) {
+        for (Moeda moeda : listaMoedas) {
+            if (moeda.getTipo().equals(novaMoeda.getTipo())) {
+                moeda.adicionarValor(novaMoeda.getValor());
+                return;
+            }
+        }
+        listaMoedas.add(novaMoeda);
     }
 
-    public void remover(double valor, Class<?> tipoMoeda) {
-        for (Moeda moeda : listaMoedas) {
-            if (moeda.getClass() == tipoMoeda) {
+    public void remover(double valor, String tipoMoeda) {
+        for (int i = 0; i < listaMoedas.size(); i++) {
+            Moeda moeda = listaMoedas.get(i);
+            if (moeda.getTipo().equals(tipoMoeda)) {
                 moeda.removerValor(valor);
-                if (moeda.valor == 0) {
-                    listaMoedas.remove(moeda);
+                if (moeda.getValor() == 0) {
+                    listaMoedas.remove(i);
                 }
                 return;
             }

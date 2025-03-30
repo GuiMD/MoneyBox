@@ -14,4 +14,9 @@ class Dolar extends Moeda {
     public double converter() {
         return valor * COTACAO;
     }
+
+    @Override
+    public String getTipo() {
+        return "Dólar";
+    }
 }
