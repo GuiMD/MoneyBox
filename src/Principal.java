@@ -30,7 +30,15 @@ public class Principal {
                     break;
 
                 case 2:
-                    System.out.println("Remover moeda ainda não implementado completamente.");
+                    System.out.print("Escolha a moeda para remover (1-Real, 2-Dólar, 3-Euro): ");
+                    int tipoRemocao = scanner.nextInt();
+                    System.out.print("Digite o valor a remover: ");
+                    double valorRemocao = scanner.nextDouble();
+
+                    if (tipoRemocao == 1) cofrinho.remover(valorRemocao, Real.class);
+                    else if (tipoRemocao == 2) cofrinho.remover(valorRemocao, Dolar.class);
+                    else if (tipoRemocao == 3) cofrinho.remover(valorRemocao, Euro.class);
+                    else System.out.println("Opção inválida!");
                     break;
 
                 case 3:

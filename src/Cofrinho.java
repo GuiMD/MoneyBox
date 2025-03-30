@@ -7,8 +7,17 @@ class Cofrinho {
         listaMoedas.add(moeda);
     }
 
-    public void remover(Moeda moeda) {
-        listaMoedas.remove(moeda);
+    public void remover(double valor, Class<?> tipoMoeda) {
+        for (Moeda moeda : listaMoedas) {
+            if (moeda.getClass() == tipoMoeda) {
+                moeda.removerValor(valor);
+                if (moeda.valor == 0) {
+                    listaMoedas.remove(moeda);
+                }
+                return;
+            }
+        }
+        System.out.println("Não há moedas suficientes desse tipo para remover.");
     }
 
     public void listagemMoedas() {
